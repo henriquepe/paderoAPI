@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose_1 = __importDefault(require("mongoose"));
-mongoose_1.default.connect('mongodb://localhost:27017/padero_db', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose_1.default.connect('mongodb+srv://rosa1702:rosa1702@paderodb.m7oe2.mongodb.net/paderoDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose_1.default.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
