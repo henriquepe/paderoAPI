@@ -14,8 +14,8 @@ app.use(express.json());
 
 app.use(router);
 
-let PORT = 3333;
+const port = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-    console.log(`server started on port ${PORT} 🤖`)
+app.listen(port, () => {
+    console.log(`server started on port ${port} 🤖`)
 })
