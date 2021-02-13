@@ -33,6 +33,14 @@ productsRouter.get("/:category", async(request, response) => {
 
 })
 
+productsRouter.delete('/:id', async(request, response) => {
+    const messageResponse = await controller.delete(request)
+
+    return response.status(200).json({message: messageResponse})
+
+
+})
+
 
 
 

@@ -47,5 +47,17 @@ export default class ProductsController {
 
     }
 
+    async delete(request: Request){
+        const {id} = request.params
+
+        const product = await Product.findById(id)
+
+        await Product.remove(product)
+
+        return `Produto ${id} deletado com sucesso`
+
+        
+    }
+
 
 }
