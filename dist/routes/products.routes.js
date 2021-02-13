@@ -76,4 +76,15 @@ productsRouter.get("/:category", function (request, response) { return __awaiter
         }
     });
 }); });
+productsRouter.delete('/:id', function (request, response) { return __awaiter(void 0, void 0, void 0, function () {
+    var messageResponse;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, controller.delete(request)];
+            case 1:
+                messageResponse = _a.sent();
+                return [2 /*return*/, response.status(200).json({ message: messageResponse })];
+        }
+    });
+}); });
 exports.default = productsRouter;
