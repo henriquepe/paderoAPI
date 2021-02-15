@@ -1,5 +1,7 @@
 import Product from '../models/Product';
 
+import ProductSchema from '../schemas/ProductSchema';
+
 import { Request, Response } from 'express';
 
 export default class ProductsController {
@@ -57,6 +59,34 @@ export default class ProductsController {
         return `Produto ${id} deletado com sucesso`
 
         
+    }
+
+    
+
+    async update(request: Request){
+        const {id} = request.params;
+       
+
+        const {name, price, description, category, quantity  } = request.body;
+
+
+
+        const product = await Product.findById(id);
+
+        if(!product){
+            return 'Produto não existe'
+        }
+
+        await product.update({
+            description
+        })
+
+        product.save()
+
+        return product;
+       
+
+
     }
 
 

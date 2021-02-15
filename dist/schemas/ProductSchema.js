@@ -8,6 +8,7 @@ var Schema = mongoose_1.default.Schema;
 var ProductSchema = new Schema({
     name: String,
     price: Number,
+    description: String,
     category: String,
     quantity: { type: Number, default: 1 }
 });

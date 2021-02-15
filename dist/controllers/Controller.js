@@ -123,6 +123,31 @@ var ProductsController = /** @class */ (function () {
             });
         });
     };
+    ProductsController.prototype.update = function (request) {
+        return __awaiter(this, void 0, void 0, function () {
+            var id, _a, name, price, description, category, quantity, product;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        id = request.params.id;
+                        _a = request.body, name = _a.name, price = _a.price, description = _a.description, category = _a.category, quantity = _a.quantity;
+                        return [4 /*yield*/, Product_1.default.findById(id)];
+                    case 1:
+                        product = _b.sent();
+                        if (!product) {
+                            return [2 /*return*/, 'Produto não existe'];
+                        }
+                        return [4 /*yield*/, product.update({
+                                description: description
+                            })];
+                    case 2:
+                        _b.sent();
+                        product.save();
+                        return [2 /*return*/, product];
+                }
+            });
+        });
+    };
     return ProductsController;
 }());
 exports.default = ProductsController;

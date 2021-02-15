@@ -41,6 +41,13 @@ productsRouter.delete('/:id', async(request, response) => {
 
 })
 
+productsRouter.put('/:id', async(request, response ) => {
+    const product = await controller.update(request);
+
+    return response.status(200).json({product})
+
+})
+
 
 
 
